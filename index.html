@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow">
 <title>Mar Flower Truck | Flores frescas con amor</title>
 <meta name="description" content="Mar Flower Truck - Arreglos florales frescos, bouquets personalizados y más. Ordena online o contáctanos por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -308,10 +312,7 @@
 
   /* CONTACT */
   #contact { background:var(--cream); }
-  .contact-inner {
-    max-width:900px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;
-  }
+  .contact-inner { max-width:600px; margin:0 auto; }
   .contact-info .section-sub { margin-bottom:2rem; }
   .contact-links { display:flex; flex-direction:column; gap:1rem; }
   .contact-link {
@@ -384,6 +385,7 @@
     text-decoration:none; font-size:1.6rem;
     transition:transform .2s, box-shadow .2s;
   }
+  .wa-float svg { width:28px; height:28px; fill:white; }
   .wa-float:hover { transform:scale(1.08); box-shadow:0 10px 32px rgba(0,0,0,0.3); }
   .wa-tooltip {
     position:absolute; right:68px; background:white; color:var(--text);
@@ -435,8 +437,6 @@
     .about-accent strong { font-size:1.4rem; }
 
     /* CONTACT */
-    .contact-inner { grid-template-columns: 1fr; }
-
     /* SECTIONS padding */
     section { padding: 3.5rem 1.2rem; }
   }
@@ -455,10 +455,15 @@
 
   /* LANG SWITCH */
   [data-lang="en"] { display:none; }
+  [data-lang="pt"] { display:none; }
   body.lang-en [data-lang="es"] { display:none; }
   body.lang-en [data-lang="en"] { display:block; }
   body.lang-en span[data-lang="en"] { display:inline; }
   body.lang-en span[data-lang="es"] { display:none; }
+  body.lang-pt [data-lang="es"] { display:none; }
+  body.lang-pt [data-lang="pt"] { display:block; }
+  body.lang-pt span[data-lang="pt"] { display:inline; }
+  body.lang-pt span[data-lang="es"] { display:none; }
 </style>
 </head>
 <body>
@@ -489,14 +494,14 @@
     </div>
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span></a>
-    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a>
-    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span></a>
-    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a>
+    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span><span data-lang="pt">Galeria</span></a>
+    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a>
+    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span><span data-lang="pt">Loja</span></a>
+    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span><span data-lang="pt">Sobre mim</span></a>
     <a href="#faq">FAQ</a>
-    <a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+    <a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span><span data-lang="pt">Contato</span></a>
     <button class="nav-lang" onclick="toggleLang()" id="langBtn">EN</button>
-    <a href="#shop" class="nav-cta"><span data-lang="es">Ordenar</span><span data-lang="en">Order Now</span></a>
+    <a href="#shop" class="nav-cta"><span data-lang="es">Ordenar</span><span data-lang="en">Order Now</span><span data-lang="pt">Pedir</span></a>
   </div>
   <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -510,21 +515,26 @@
     <p class="hero-eyebrow">
       <span data-lang="es">✦ Flores frescas con amor</span>
       <span data-lang="en">✦ Fresh flowers with love</span>
+      <span data-lang="pt">✦ Flores frescas com amor</span>
     </p>
     <h1 class="hero-title">
       <span data-lang="es">Lleva la belleza<br>de las flores<br><em>a tu vida</em></span>
       <span data-lang="en">Bring the beauty<br>of flowers<br><em>into your life</em></span>
+      <span data-lang="pt">Leve a beleza<br>das flores<br><em>à sua vida</em></span>
     </h1>
     <p class="hero-sub">
       <span data-lang="es">Bouquets artesanales, arreglos personalizados y flores frescas directo de nuestro flower truck. Para cada momento especial.</span>
       <span data-lang="en">Handcrafted bouquets, custom arrangements and fresh flowers straight from our flower truck. For every special moment.</span>
+      <span data-lang="pt">Buquês artesanais, arranjos personalizados e flores frescas direto do nosso flower truck. Para cada momento especial.</span>
     </p>
     <div class="hero-btns">
       <a href="#shop" class="btn-primary">
         <span data-lang="es">Ver tienda</span><span data-lang="en">Shop now</span>
+        <span data-lang="pt">Ver loja</span>
       </a>
       <a href="#contact" class="btn-outline">
         <span data-lang="es">Contáctanos</span><span data-lang="en">Contact us</span>
+        <span data-lang="pt">Contate-nos</span>
       </a>
     </div>
     <div class="hero-flowers">
@@ -575,10 +585,12 @@
   <div class="section-header" style="text-align:center;">
     <p class="section-label">
       <span data-lang="es">Nuestra galería</span><span data-lang="en">Our gallery</span>
+      <span data-lang="pt">Nossa galeria</span>
     </p>
     <h2 class="section-title">
       <span data-lang="es">Cada arreglo es<br><em>una obra de arte</em></span>
       <span data-lang="en">Every arrangement<br><em>is a work of art</em></span>
+      <span data-lang="pt">Cada arranjo é<br><em>uma obra de arte</em></span>
     </h2>
   </div>
   <div class="gallery-grid">
@@ -637,6 +649,7 @@
   <div class="section-header">
     <p class="section-label">
       <span data-lang="es">Lo que ofrecemos</span><span data-lang="en">What we offer</span>
+      <span data-lang="pt">O que oferecemos</span>
     </p>
     <h2 class="section-title">
       <span data-lang="es">Nuestros <em>servicios</em></span><span data-lang="en">Our <em>services</em></span>
@@ -693,9 +706,10 @@
 <!-- SHOP -->
 <section id="shop" style="background:#EDF4EC;">
   <div class="section-header" style="text-align:center;">
-    <p class="section-label"><span data-lang="es">Tienda online</span><span data-lang="en">Online shop</span></p>
+    <p class="section-label"><span data-lang="es">Tienda online</span><span data-lang="en">Online shop</span><span data-lang="pt">Loja online</span></p>
     <h2 class="section-title">
       <span data-lang="es">Ordena tus flores <em>aquí</em></span><span data-lang="en">Order your flowers <em>here</em></span>
+      <span data-lang="pt">Peça suas flores <em>aqui</em></span>
     </h2>
     <p class="section-sub" style="margin:0 auto 2rem;">
       <span data-lang="es">Pago 100% seguro. Tu tarjeta es procesada por Stripe/PayPal — nosotros nunca vemos tus datos.</span>
@@ -759,17 +773,20 @@
         <strong>❤️</strong>
         <span data-lang="es">Hecho con amor</span>
         <span data-lang="en">Made with love</span>
+        <span data-lang="pt">Feito com amor</span>
       </div>
     </div>
     <div class="about-text">
-      <p class="section-label"><span data-lang="es">Sobre nosotros</span><span data-lang="en">About us</span></p>
+      <p class="section-label"><span data-lang="es">Sobre nosotros</span><span data-lang="en">About us</span><span data-lang="pt">Sobre nós</span></p>
       <h2 class="section-title">
         <span data-lang="es">Detrás de cada<br>flor hay una <em>historia</em></span>
         <span data-lang="en">Behind every<br>flower is a <em>story</em></span>
+        <span data-lang="pt">Atrás de cada<br>flor há uma <em>história</em></span>
       </h2>
       <p class="section-sub">
         <span data-lang="es">Soy Mar, y mi amor por las flores nació de querer llevar alegría a cada momento. Con mi flower truck, llevo arreglos frescos y personalizados directamente a ti — porque cada persona merece sentirse especial.</span>
         <span data-lang="en">I'm Mar, and my love for flowers was born from wanting to bring joy to every moment. With my flower truck, I bring fresh, personalized arrangements directly to you — because everyone deserves to feel special.</span>
+        <span data-lang="pt">Sou Mar, e meu amor pelas flores nasceu do desejo de levar alegria a cada momento. Com meu flower truck, levo arranjos frescos e personalizados diretamente até você — porque cada pessoa merece se sentir especial.</span>
       </p>
       <div class="about-values">
         <div class="about-val">
@@ -788,6 +805,7 @@
       <div style="margin-top:2rem;">
         <a href="#contact" class="btn-primary">
           <span data-lang="es">Hablar con Mar</span><span data-lang="en">Talk to Mar</span>
+          <span data-lang="pt">Falar com Mar</span>
         </a>
       </div>
     </div>
@@ -870,61 +888,41 @@
       <span data-lang="en">Ready to order<br>or have <em>questions</em>?</span>
     </h2>
   </div>
-  <div class="contact-inner">
-    <div class="contact-info">
-      <p class="section-sub" style="margin-bottom:2rem;">
-        <span data-lang="es">Estamos aquí para ayudarte. Escríbenos por WhatsApp o Instagram, o llena el formulario.</span>
-        <span data-lang="en">We're here to help. Message us on WhatsApp or Instagram, or fill out the form.</span>
-      </p>
-      <div class="contact-links">
-        <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="contact-link">
-          <div class="contact-link-icon wa">📱</div>
-          <div>
-            <p>WhatsApp</p>
-            <strong data-lang="es">Escríbenos directo</strong>
-            <strong data-lang="en">Message us directly</strong>
-          </div>
-        </a>
-        <a href="https://www.instagram.com/marflowertruck" target="_blank" class="contact-link">
-          <div class="contact-link-icon ig">📷</div>
-          <div><p>Instagram</p><strong>@marflowertruck</strong></div>
-        </a>
-        <a href="mailto:info@marflowertruck.com" class="contact-link">
-          <div class="contact-link-icon em">✉️</div>
-          <div><p>Email</p><strong>info@marflowertruck.com</strong></div>
-        </a>
-      </div>
+  <div style="max-width:600px;margin:0 auto;">
+    <p class="section-sub" style="text-align:center;margin:0 auto 2.5rem;">
+      <span data-lang="es">Estamos aquí para ayudarte. Escríbenos por WhatsApp o Instagram.</span>
+      <span data-lang="en">We're here to help. Message us on WhatsApp or Instagram.</span>
+      <span data-lang="pt">Estamos aqui para ajudar. Escreva pelo WhatsApp ou Instagram.</span>
+    </p>
+    <div class="contact-links">
+      <a href="https://wa.me/17865456337?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="contact-link">
+        <div class="contact-link-icon wa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="#25D366"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.774L0 32l8.437-2.009A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.5a13.44 13.44 0 01-6.845-1.87l-.49-.292-5.007 1.193 1.215-4.876-.32-.503A13.44 13.44 0 012.5 16C2.5 8.544 8.544 2.5 16 2.5S29.5 8.544 29.5 16 23.456 29.5 16 29.5zm7.44-9.77c-.408-.204-2.414-1.191-2.788-1.327-.374-.136-.646-.204-.918.204-.272.408-1.054 1.327-1.292 1.599-.238.272-.476.306-.884.102-.408-.204-1.723-.635-3.28-2.023-1.212-1.08-2.03-2.414-2.268-2.822-.238-.408-.025-.629.179-.832.183-.182.408-.476.612-.714.204-.238.272-.408.408-.68.136-.272.068-.51-.034-.714-.102-.204-.918-2.21-1.258-3.026-.33-.794-.668-.686-.918-.699l-.782-.013c-.272 0-.714.102-1.088.51-.374.408-1.428 1.395-1.428 3.401 0 2.006 1.462 3.944 1.666 4.216.204.272 2.877 4.393 6.972 6.161.974.42 1.735.671 2.328.859.978.31 1.869.266 2.573.161.785-.117 2.414-.987 2.754-1.94.34-.952.34-1.768.238-1.94-.102-.17-.374-.272-.782-.476z"/></svg></div>
+        <div>
+          <p>WhatsApp</p>
+          <strong data-lang="es">+1 (786) 545-6337 · Escríbenos directo</strong>
+          <strong data-lang="en">+1 (786) 545-6337 · Message us directly</strong>
+          <strong data-lang="pt">+1 (786) 545-6337 · Escreva direto</strong>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/marflowertruck" target="_blank" class="contact-link">
+        <div class="contact-link-icon ig">📷</div>
+        <div><p>Instagram</p><strong>@marflowertruck</strong></div>
+      </a>
+      <a href="mailto:info@marflowertruck.com" class="contact-link">
+        <div class="contact-link-icon em">✉️</div>
+        <div><p>Email</p><strong>info@marflowertruck.com</strong></div>
+      </a>
     </div>
-    <div class="contact-form-wrap">
-      <h3><span data-lang="es">Envíanos un mensaje</span><span data-lang="en">Send us a message</span></h3>
-      <div class="form-group">
-        <label><span data-lang="es">Tu nombre</span><span data-lang="en">Your name</span></label>
-        <input type="text" placeholder="Mar García">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="tu@email.com">
-      </div>
-      <div class="form-group">
-        <label><span data-lang="es">¿Qué necesitas?</span><span data-lang="en">What do you need?</span></label>
-        <select>
-          <option>Bouquet / Arreglo</option>
-          <option data-lang="es">Evento o boda</option>
-          <option data-lang="en" style="display:none">Event or wedding</option>
-          <option>Flower truck pop-up</option>
-          <option>Otro / Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label><span data-lang="es">Mensaje</span><span data-lang="en">Message</span></label>
-        <textarea placeholder="Cuéntanos sobre tu pedido, fecha, presupuesto..."></textarea>
-      </div>
-      <button class="form-submit" onclick="submitForm()">
-        <span data-lang="es">Enviar mensaje 🌸</span><span data-lang="en">Send message 🌸</span>
-      </button>
-      <p style="font-size:0.75rem;color:var(--text-soft);margin-top:0.8rem;text-align:center;">
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://wa.me/17865456337?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="btn-primary">
+        <span data-lang="es">🌸 Ordenar por WhatsApp</span>
+        <span data-lang="en">🌸 Order via WhatsApp</span>
+        <span data-lang="pt">🌸 Pedir pelo WhatsApp</span>
+      </a>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-soft);">
         <span data-lang="es">⚡ Respondemos en menos de 24 horas</span>
         <span data-lang="en">⚡ We respond within 24 hours</span>
+        <span data-lang="pt">⚡ Respondemos em menos de 24 horas</span>
       </p>
     </div>
   </div>
@@ -935,26 +933,35 @@
   <div class="footer-logo"><em>Mar</em> Flower Truck</div>
   <p class="footer-tagline">
     <span data-lang="es">Flores frescas con amor 🌸</span><span data-lang="en">Fresh flowers with love 🌸</span>
+    <span data-lang="pt">Flores frescas com amor 🌸</span>
   </p>
   <div class="footer-links">
-    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span></a>
-    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a>
-    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span></a>
-    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a>
+    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span><span data-lang="pt">Galeria</span></a>
+    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span><span data-lang="pt">Serviços</span></a>
+    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span><span data-lang="pt">Loja</span></a>
+    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span><span data-lang="pt">Sobre mim</span></a>
     <a href="#faq">FAQ</a>
     <a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
   </div>
   <div class="footer-social">
     <a href="https://www.instagram.com/marflowertruck" target="_blank" aria-label="Instagram">📷</a>
-    <a href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">📱</a>
+    <a href="https://wa.me/17865456337" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="#25D366"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.774L0 32l8.437-2.009A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.5a13.44 13.44 0 01-6.845-1.87l-.49-.292-5.007 1.193 1.215-4.876-.32-.503A13.44 13.44 0 012.5 16C2.5 8.544 8.544 2.5 16 2.5S29.5 8.544 29.5 16 23.456 29.5 16 29.5zm7.44-9.77c-.408-.204-2.414-1.191-2.788-1.327-.374-.136-.646-.204-.918.204-.272.408-1.054 1.327-1.292 1.599-.238.272-.476.306-.884.102-.408-.204-1.723-.635-3.28-2.023-1.212-1.08-2.03-2.414-2.268-2.822-.238-.408-.025-.629.179-.832.183-.182.408-.476.612-.714.204-.238.272-.408.408-.68.136-.272.068-.51-.034-.714-.102-.204-.918-2.21-1.258-3.026-.33-.794-.668-.686-.918-.699l-.782-.013c-.272 0-.714.102-1.088.51-.374.408-1.428 1.395-1.428 3.401 0 2.006 1.462 3.944 1.666 4.216.204.272 2.877 4.393 6.972 6.161.974.42 1.735.671 2.328.859.978.31 1.869.266 2.573.161.785-.117 2.414-.987 2.754-1.94.34-.952.34-1.768.238-1.94-.102-.17-.374-.272-.782-.476z"/></svg></a>
   </div>
-  <p class="footer-copy">© 2025 Mar Flower Truck. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></p>
+  <div style="display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+    <a href="#privacy" onclick="showPolicy('privacy')" style="color:rgba(255,255,255,0.55);font-size:0.75rem;text-decoration:none;">
+      <span data-lang="es">Política de Privacidad</span><span data-lang="en">Privacy Policy</span><span data-lang="pt">Política de Privacidade</span>
+    </a>
+    <a href="#terms" onclick="showPolicy('terms')" style="color:rgba(255,255,255,0.55);font-size:0.75rem;text-decoration:none;">
+      <span data-lang="es">Términos y Condiciones</span><span data-lang="en">Terms & Conditions</span><span data-lang="pt">Termos e Condições</span>
+    </a>
+  </div>
+  <p class="footer-copy">© 2025 Mar Flower Truck · Mar Events Flower Truck LLC. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span><span data-lang="pt">Todos os direitos reservados.</span></p>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="wa-float" aria-label="WhatsApp">
-  <span class="wa-tooltip"><span data-lang="es">¡Escríbenos!</span><span data-lang="en">Chat with us!</span></span>
-  📱
+<a href="https://wa.me/17865456337?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <span class="wa-tooltip"><span data-lang="es">¡Escríbenos!</span><span data-lang="en">Chat with us!</span><span data-lang="pt">Fale conosco!</span></span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="#25D366"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.774L0 32l8.437-2.009A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.5a13.44 13.44 0 01-6.845-1.87l-.49-.292-5.007 1.193 1.215-4.876-.32-.503A13.44 13.44 0 012.5 16C2.5 8.544 8.544 2.5 16 2.5S29.5 8.544 29.5 16 23.456 29.5 16 29.5zm7.44-9.77c-.408-.204-2.414-1.191-2.788-1.327-.374-.136-.646-.204-.918.204-.272.408-1.054 1.327-1.292 1.599-.238.272-.476.306-.884.102-.408-.204-1.723-.635-3.28-2.023-1.212-1.08-2.03-2.414-2.268-2.822-.238-.408-.025-.629.179-.832.183-.182.408-.476.612-.714.204-.238.272-.408.408-.68.136-.272.068-.51-.034-.714-.102-.204-.918-2.21-1.258-3.026-.33-.794-.668-.686-.918-.699l-.782-.013c-.272 0-.714.102-1.088.51-.374.408-1.428 1.395-1.428 3.401 0 2.006 1.462 3.944 1.666 4.216.204.272 2.877 4.393 6.972 6.161.974.42 1.735.671 2.328.859.978.31 1.869.266 2.573.161.785-.117 2.414-.987 2.754-1.94.34-.952.34-1.768.238-1.94-.102-.17-.374-.272-.782-.476z"/></svg>
 </a>
 
 <script>
@@ -971,10 +978,14 @@
 })();
 
 var currentLang = 'es';
+var langs = ['es','en','pt'];
+var langLabels = {es:'EN', en:'PT', pt:'ES'};
 function toggleLang(){
-  currentLang = currentLang==='es'?'en':'es';
-  document.body.classList.toggle('lang-en', currentLang==='en');
-  document.getElementById('langBtn').textContent = currentLang==='es'?'EN':'ES';
+  var idx = langs.indexOf(currentLang);
+  currentLang = langs[(idx+1) % 3];
+  document.body.className = document.body.className.replace(/lang-\S+/g,'').trim();
+  if(currentLang !== 'es') document.body.classList.add('lang-'+currentLang);
+  document.getElementById('langBtn').textContent = langLabels[currentLang];
   document.querySelectorAll('[data-lang]').forEach(function(el){
     if(el.tagName==='SPAN'||el.tagName==='STRONG'){
       el.style.display = el.dataset.lang===currentLang?'inline':'none';
@@ -995,20 +1006,124 @@ function toggleNav(){
   document.getElementById('navLinks').classList.toggle('open');
 }
 
-function submitForm(){
-  alert(currentLang==='es'
-    ? '¡Gracias! Te contactaremos pronto. 🌸'
-    : 'Thank you! We will contact you soon. 🌸'
-  );
-}
 
 document.querySelectorAll('.nav-links a').forEach(function(a){
   a.addEventListener('click',function(){ document.getElementById('navLinks').classList.remove('open'); });
 });
 
-document.querySelectorAll('[data-lang="en"]').forEach(function(el){
-  if(el.tagName==='SPAN'||el.tagName==='STRONG') el.style.display='none';
-  else if(el.tagName!=='BUTTON') el.style.display='none';
+['en','pt'].forEach(function(lang){
+  document.querySelectorAll('[data-lang="'+lang+'"]').forEach(function(el){
+    if(el.tagName==='SPAN'||el.tagName==='STRONG') el.style.display='none';
+    else if(el.tagName!=='BUTTON') el.style.display='none';
+  });
+});
+</script>
+
+<!-- POLICY MODAL -->
+<div id="policyModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;overflow-y:auto;padding:2rem 1rem;">
+  <div style="max-width:700px;margin:2rem auto;background:#FAF7F4;border-radius:20px;padding:2.5rem;position:relative;">
+    <button onclick="closePolicy()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#6B4F3A;">✕</button>
+    <div id="policyContent"></div>
+  </div>
+</div>
+
+<script>
+var policies = {
+  privacy: {
+    es: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Política de Privacidad</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Última actualización:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">En <strong>Mar Flower Truck</strong> (Mar Events Flower Truck LLC) nos comprometemos a proteger tu privacidad. Esta política explica cómo recopilamos, usamos y protegemos tu información.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Información que recopilamos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Podemos recopilar tu nombre, número de teléfono, email y dirección cuando realizas un pedido o nos contactas por WhatsApp, Instagram o email.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Uso de la información</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Usamos tu información únicamente para procesar pedidos, coordinar entregas y comunicarnos contigo. Nunca vendemos ni compartimos tu información con terceros.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Pagos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Los pagos son procesados de forma segura por Square. No almacenamos información de tarjetas de crédito o débito.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Cookies</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Este sitio web puede utilizar cookies básicas para mejorar tu experiencia de navegación. No utilizamos cookies de rastreo publicitario.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">5. Contacto</h3>
+<p style="color:#2E1F14;line-height:1.75;">Para preguntas sobre privacidad, contáctanos en: <strong>info@marflowertruck.com</strong> o WhatsApp <strong>+1 (786) 545-6337</strong>.</p>`,
+    en: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Privacy Policy</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Last updated:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;"><strong>Mar Flower Truck</strong> (Mar Events Flower Truck LLC) is committed to protecting your privacy. This policy explains how we collect, use, and protect your information.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Information we collect</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">We may collect your name, phone number, email and address when you place an order or contact us via WhatsApp, Instagram or email.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Use of information</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">We use your information solely to process orders, coordinate deliveries and communicate with you. We never sell or share your information with third parties.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Payments</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Payments are securely processed by Square. We do not store any credit or debit card information.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Cookies</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">This website may use basic cookies to improve your browsing experience. We do not use advertising tracking cookies.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">5. Contact</h3>
+<p style="color:#2E1F14;line-height:1.75;">For privacy questions, contact us at: <strong>info@marflowertruck.com</strong> or WhatsApp <strong>+1 (786) 545-6337</strong>.</p>`,
+    pt: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Política de Privacidade</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Última atualização:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;"><strong>Mar Flower Truck</strong> (Mar Events Flower Truck LLC) está comprometida em proteger sua privacidade.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Informações coletadas</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Podemos coletar seu nome, telefone, email e endereço ao fazer um pedido ou entrar em contato conosco.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Uso das informações</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Usamos suas informações apenas para processar pedidos e nos comunicar com você. Nunca vendemos ou compartilhamos suas informações.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Pagamentos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Os pagamentos são processados com segurança pelo Square. Não armazenamos dados de cartão.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Contato</h3>
+<p style="color:#2E1F14;line-height:1.75;">Dúvidas: <strong>info@marflowertruck.com</strong> ou WhatsApp <strong>+1 (786) 545-6337</strong>.</p>`
+  },
+  terms: {
+    es: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Términos y Condiciones</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Última actualización:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Al usar este sitio web o realizar un pedido a <strong>Mar Flower Truck</strong>, aceptas los siguientes términos.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Pedidos y pagos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Todos los pedidos están sujetos a disponibilidad. El pago debe realizarse al momento del pedido. Aceptamos pagos mediante Square, tarjeta de crédito/débito.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Entregas</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Las entregas se realizan en el área local acordada. Los tiempos de entrega son estimados y pueden variar. Te contactaremos para coordinar.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Cancelaciones y reembolsos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Las cancelaciones deben realizarse con al menos 24 horas de anticipación. Los reembolsos se procesan caso por caso. Las flores son productos perecederos — no aceptamos devoluciones una vez entregadas.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Productos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Las flores son productos naturales. Pueden existir variaciones de color y tamaño respecto a las fotos. Nos reservamos el derecho de sustituir flores no disponibles por otras de igual o mayor valor.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">5. Contacto</h3>
+<p style="color:#2E1F14;line-height:1.75;">Para cualquier pregunta: <strong>info@marflowertruck.com</strong> · <strong>+1 (786) 545-6337</strong>.</p>`,
+    en: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Terms & Conditions</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Last updated:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">By using this website or placing an order with <strong>Mar Flower Truck</strong>, you agree to the following terms.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Orders & payments</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">All orders are subject to availability. Payment is required at the time of order. We accept payments via Square, credit/debit card.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Deliveries</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Deliveries are made in the agreed local area. Delivery times are estimates and may vary. We will contact you to coordinate.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Cancellations & refunds</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Cancellations must be made at least 24 hours in advance. Refunds are handled on a case-by-case basis. Flowers are perishable — no returns once delivered.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Products</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Flowers are natural products. Color and size may vary from photos. We reserve the right to substitute unavailable flowers with others of equal or greater value.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">5. Contact</h3>
+<p style="color:#2E1F14;line-height:1.75;">Questions: <strong>info@marflowertruck.com</strong> · <strong>+1 (786) 545-6337</strong>.</p>`,
+    pt: `<h2 style="font-family:'Playfair Display',serif;color:#6B4F3A;margin-bottom:1rem;">Termos e Condições</h2>
+<p style="color:#7A5C48;font-size:0.85rem;margin-bottom:0.5rem;"><strong>Última atualização:</strong> 2025</p>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Ao usar este site ou fazer um pedido na <strong>Mar Flower Truck</strong>, você concorda com os seguintes termos.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">1. Pedidos e pagamentos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Todos os pedidos estão sujeitos à disponibilidade. O pagamento deve ser feito no momento do pedido via Square.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">2. Entregas</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Entregas na área local acordada. Os prazos são estimativas e podem variar.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">3. Cancelamentos e reembolsos</h3>
+<p style="color:#2E1F14;line-height:1.75;margin-bottom:1rem;">Cancelamentos com pelo menos 24 horas de antecedência. Flores são perecíveis — sem devoluções após a entrega.</p>
+<h3 style="color:#6B4F3A;margin:1.2rem 0 0.5rem;">4. Contato</h3>
+<p style="color:#2E1F14;line-height:1.75;"><strong>info@marflowertruck.com</strong> · <strong>+1 (786) 545-6337</strong>.</p>`
+  }
+};
+
+function showPolicy(type) {
+  event.preventDefault();
+  var lang = currentLang || 'es';
+  document.getElementById('policyContent').innerHTML = policies[type][lang] || policies[type]['es'];
+  document.getElementById('policyModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closePolicy() {
+  document.getElementById('policyModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('policyModal').addEventListener('click', function(e) {
+  if(e.target === this) closePolicy();
 });
 </script>
 </body>
