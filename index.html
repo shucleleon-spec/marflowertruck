@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mar Flower Truck | Flores frescas con amor</title>
+<meta name="description" content="Mar Flower Truck - Arreglos florales frescos, bouquets personalizados y más. Ordena online o contáctanos por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F4;
+    --rose: #E8C5B8;
+    --rose-dark: #C99282;
+    --sage: #8FAF8C;
+    --sage-dark: #5E8A5B;
+    --brown: #6B4F3A;
+    --brown-light: #A47B5E;
+    --text: #2E1F14;
+    --text-soft: #7A5C48;
+    --white: #FFFFFF;
+    --shadow: rgba(107,79,58,0.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'Lato',sans-serif; background:var(--cream); color:var(--text); }
+
+  /* NAV */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(250,247,244,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rose);
+    padding: 0 2rem;
+    display: flex; align-items:center; justify-content:space-between;
+    height: 70px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo svg { width:42px; height:42px; }
+  .nav-logo-text { display:flex; flex-direction:column; line-height:1.1; }
+  .nav-logo-text span:first-child {
+    font-family:'Playfair Display',serif;
+    font-size:1.15rem; color:var(--brown); font-weight:600;
+  }
+  .nav-logo-text span:last-child {
+    font-size:0.65rem; letter-spacing:0.12em; color:var(--text-soft); text-transform:uppercase;
+  }
+  .nav-links { display:flex; gap:1.8rem; align-items:center; }
+  .nav-links a {
+    text-decoration:none; font-size:0.82rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text-soft); transition:color .2s;
+  }
+  .nav-links a:hover { color:var(--brown); }
+  .nav-lang {
+    background:none; border:1px solid var(--rose-dark); color:var(--brown);
+    border-radius:20px; padding:4px 12px; cursor:pointer; font-size:0.75rem;
+    letter-spacing:0.06em; font-family:'Lato',sans-serif; transition:all .2s;
+  }
+  .nav-lang:hover { background:var(--rose); }
+  .nav-cta {
+    background:var(--sage); color:white; border:none; border-radius:25px;
+    padding:8px 20px; font-family:'Lato',sans-serif; font-size:0.8rem;
+    letter-spacing:0.06em; cursor:pointer; text-decoration:none;
+    transition:background .2s; text-transform:uppercase;
+  }
+  .nav-cta:hover { background:var(--sage-dark); }
+  .hamburger { display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; }
+  .hamburger span { display:block; width:22px; height:2px; background:var(--brown); border-radius:2px; transition:.3s; }
+
+  /* HERO */
+  #hero {
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(160deg, #FAF7F4 0%, #F5EAE3 50%, #EDF4EC 100%);
+    padding: 100px 2rem 4rem;
+    position:relative; overflow:hidden;
+  }
+  .hero-petals { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+  .petal {
+    position:absolute; border-radius:50% 0 50% 0;
+    animation: floatPetal linear infinite; opacity:0.18;
+  }
+  @keyframes floatPetal {
+    0%   { transform: translateY(-40px) rotate(0deg); opacity:0; }
+    10%  { opacity: 0.18; }
+    90%  { opacity: 0.18; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity:0; }
+  }
+  .hero-inner { max-width:680px; text-align:center; position:relative; z-index:2; }
+  .hero-eyebrow {
+    display:inline-block; font-size:0.72rem; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--sage-dark); margin-bottom:1.2rem;
+    border-bottom:1px solid var(--sage); padding-bottom:4px;
+  }
+  .hero-title {
+    font-family:'Playfair Display',serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height:1.15; color:var(--brown); margin-bottom:1.2rem;
+  }
+  .hero-title em { font-style:italic; color:var(--rose-dark); }
+  .hero-sub {
+    font-size:1rem; color:var(--text-soft); line-height:1.75;
+    max-width:480px; margin:0 auto 2.2rem;
+  }
+  .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .btn-primary {
+    background:var(--brown); color:white; padding:14px 32px;
+    border-radius:30px; text-decoration:none; font-size:0.85rem;
+    letter-spacing:0.08em; text-transform:uppercase; transition:background .2s; font-weight:700;
+  }
+  .btn-primary:hover { background:var(--text); }
+  .btn-outline {
+    border:1.5px solid var(--brown); color:var(--brown); padding:14px 32px;
+    border-radius:30px; text-decoration:none; font-size:0.85rem;
+    letter-spacing:0.08em; text-transform:uppercase; transition:all .2s; font-weight:700;
+  }
+  .btn-outline:hover { background:var(--brown); color:white; }
+  .hero-flowers { margin-top:3rem; display:flex; justify-content:center; }
+  .hero-flowers svg { width:min(340px, 80vw); }
+
+  /* SECTION COMMON */
+  section { padding: 5rem 2rem; }
+  .section-label {
+    font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--sage-dark); margin-bottom:0.5rem;
+  }
+  .section-title {
+    font-family:'Playfair Display',serif;
+    font-size: clamp(1.8rem,4vw,2.6rem);
+    color:var(--brown); margin-bottom:1rem;
+  }
+  .section-title em { font-style:italic; }
+  .section-sub { color:var(--text-soft); max-width:520px; line-height:1.7; }
+  .section-header { margin-bottom:3rem; }
+
+  /* GALLERY */
+  #gallery { background:#F5EAE3; }
+  .gallery-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+    gap:1rem; max-width:1100px; margin:0 auto;
+  }
+  .gallery-card {
+    border-radius:16px; overflow:hidden; position:relative;
+    aspect-ratio:3/4; background:var(--rose);
+    cursor:pointer; transition:transform .3s;
+  }
+  .gallery-card:hover { transform:scale(1.02); }
+  .gallery-card:nth-child(2) { aspect-ratio:3/3.2; }
+  .gallery-card:nth-child(4) { aspect-ratio:3/3.5; }
+  .gallery-placeholder {
+    width:100%; height:100%; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:0.8rem;
+    background:linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  }
+  .gallery-placeholder span { font-size:2.5rem; }
+  .gallery-placeholder p {
+    font-family:'Playfair Display',serif; font-style:italic;
+    color:white; font-size:0.9rem;
+  }
+  .gallery-overlay {
+    position:absolute; inset:0; background:rgba(107,79,58,0);
+    transition:background .3s; display:flex; align-items:flex-end; padding:1rem;
+  }
+  .gallery-card:hover .gallery-overlay { background:rgba(107,79,58,0.35); }
+  .gallery-tag {
+    background:white; color:var(--brown); border-radius:20px;
+    padding:4px 14px; font-size:0.75rem; letter-spacing:0.06em;
+    opacity:0; transition:opacity .3s; text-transform:uppercase;
+  }
+  .gallery-card:hover .gallery-tag { opacity:1; }
+
+  /* SERVICES — centrado */
+  #services { background:var(--cream); }
+  #services .section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #services .section-sub { text-align: center; }
+  .services-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+    gap:1.5rem; max-width:1100px; margin:0 auto;
+  }
+  .service-card {
+    background:white; border-radius:20px; padding:2rem 1.8rem;
+    border:1px solid rgba(232,197,184,0.5);
+    transition:box-shadow .3s, transform .3s;
+  }
+  .service-card:hover { box-shadow:0 12px 40px var(--shadow); transform:translateY(-4px); }
+  .service-icon { font-size:2.2rem; margin-bottom:1rem; }
+  .service-name {
+    font-family:'Playfair Display',serif; font-size:1.3rem;
+    color:var(--brown); margin-bottom:0.5rem;
+  }
+  .service-desc { color:var(--text-soft); font-size:0.9rem; line-height:1.65; margin-bottom:1.2rem; }
+  .service-price { font-size:1.5rem; color:var(--sage-dark); font-weight:700; margin-bottom:1rem; }
+  .service-price span { font-size:0.8rem; color:var(--text-soft); font-weight:400; }
+  .service-btn {
+    display:inline-block; background:var(--rose); color:var(--brown);
+    border-radius:25px; padding:8px 22px; font-size:0.8rem;
+    text-decoration:none; letter-spacing:0.06em; text-transform:uppercase;
+    font-weight:700; transition:background .2s;
+  }
+  .service-btn:hover { background:var(--rose-dark); color:white; }
+
+  /* SHOP */
+  #shop { background:#EDF4EC; }
+  .ecwid-placeholder {
+    background:white; border-radius:20px; padding:3rem 2rem;
+    text-align:center; border:2px dashed var(--sage);
+    max-width:700px; margin:0 auto;
+  }
+  .ecwid-placeholder h3 {
+    font-family:'Playfair Display',serif; color:var(--brown);
+    font-size:1.4rem; margin-bottom:0.8rem;
+  }
+  .ecwid-placeholder p { color:var(--text-soft); margin-bottom:1.5rem; font-size:0.9rem; }
+  .ecwid-note { font-size:0.78rem; color:var(--sage-dark); margin-top:0.8rem; font-style:italic; }
+
+  /* SHOP SECTION */
+  .shop-features {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.2rem; max-width:900px; margin:0 auto 3rem;
+  }
+  .shop-feature {
+    background:white; border-radius:16px; padding:1.5rem;
+    text-align:center; border:1px solid rgba(143,175,140,0.3);
+    transition:transform .3s;
+  }
+  .shop-feature:hover { transform:translateY(-4px); }
+  .shop-feature-icon { font-size:2rem; margin-bottom:0.8rem; }
+  .shop-feature-name {
+    font-family:'Playfair Display',serif; color:var(--brown);
+    font-size:1rem; margin-bottom:0.4rem;
+  }
+  .shop-feature-desc { color:var(--text-soft); font-size:0.82rem; line-height:1.5; }
+  .shop-cta-wrap {
+    text-align:center; max-width:580px; margin:0 auto;
+    background:white; border-radius:24px; padding:3rem 2rem;
+    border:1px solid rgba(143,175,140,0.4);
+  }
+  .shop-cta-flowers { font-size:3rem; margin-bottom:1rem; }
+  .shop-cta-title {
+    font-family:'Playfair Display',serif; font-size:1.6rem;
+    color:var(--brown); margin-bottom:0.8rem;
+  }
+  .shop-cta-title em { font-style:italic; color:var(--rose-dark); }
+  .shop-cta-sub { color:var(--text-soft); margin-bottom:2rem; line-height:1.7; font-size:0.9rem; }
+  .shop-cta-btn {
+    display:inline-block; background:var(--brown); color:white;
+    padding:16px 40px; border-radius:30px; text-decoration:none;
+    font-size:0.95rem; letter-spacing:0.08em; text-transform:uppercase;
+    font-weight:700; transition:background .2s, transform .2s;
+  }
+  .shop-cta-btn:hover { background:var(--text); transform:scale(1.03); }
+  .shop-trust { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+  .shop-trust span { font-size:0.75rem; color:var(--text-soft); }
+
+  /* ABOUT */
+  #about { background:var(--cream); }
+  .about-inner {
+    max-width:1000px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+  }
+  .about-img-wrap { position:relative; }
+  .about-img-box {
+    border-radius:24px; overflow:hidden; aspect-ratio:4/5;
+    background:linear-gradient(135deg,var(--rose) 0%,var(--sage) 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  /* Imagen real de Mar */
+  .about-img-box img {
+    width:100%; height:100%; object-fit:cover; object-position:center top;
+    display:block; border-radius:24px;
+  }
+  .about-accent {
+    position:absolute; bottom:-20px; right:-20px;
+    background:var(--sage); color:white; border-radius:16px;
+    padding:1rem 1.4rem; font-family:'Playfair Display',serif;
+    font-size:1rem; text-align:center; line-height:1.3;
+    box-shadow:0 8px 24px var(--shadow);
+  }
+  .about-accent strong { font-size:1.8rem; display:block; }
+  .about-text .section-sub { margin-bottom:1.5rem; }
+  .about-values { display:flex; flex-direction:column; gap:0.8rem; margin-top:1.5rem; }
+  .about-val { display:flex; gap:0.8rem; align-items:flex-start; }
+  .about-val-dot { width:8px; height:8px; background:var(--rose-dark); border-radius:50%; flex-shrink:0; margin-top:6px; }
+  .about-val p { color:var(--text-soft); font-size:0.9rem; line-height:1.6; }
+
+  /* FAQ */
+  #faq { background:#F5EAE3; }
+  .faq-inner { max-width:720px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid rgba(232,197,184,0.8); padding:1.2rem 0; }
+  .faq-q { display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:1rem; }
+  .faq-q h3 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--brown); font-weight:400; }
+  .faq-icon {
+    width:26px; height:26px; border-radius:50%;
+    background:var(--rose); color:var(--brown);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem; flex-shrink:0; transition:background .2s, transform .3s;
+  }
+  .faq-item.open .faq-icon { background:var(--brown); color:white; transform:rotate(45deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .3s; }
+  .faq-item.open .faq-a { max-height:200px; padding-top:0.8rem; }
+  .faq-a p { color:var(--text-soft); line-height:1.75; font-size:0.92rem; }
+
+  /* CONTACT */
+  #contact { background:var(--cream); }
+  .contact-inner {
+    max-width:900px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;
+  }
+  .contact-info .section-sub { margin-bottom:2rem; }
+  .contact-links { display:flex; flex-direction:column; gap:1rem; }
+  .contact-link {
+    display:flex; align-items:center; gap:1rem;
+    text-decoration:none; color:var(--text-soft); transition:color .2s;
+  }
+  .contact-link:hover { color:var(--brown); }
+  .contact-link-icon {
+    width:44px; height:44px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.2rem; flex-shrink:0;
+  }
+  .contact-link-icon.wa { background:#DCF8C6; }
+  .contact-link-icon.ig { background:#F5E0F5; }
+  .contact-link-icon.em { background:#E0EAF8; }
+  .contact-link p { font-size:0.8rem; color:var(--text-soft); margin-bottom:2px; text-transform:uppercase; letter-spacing:0.07em; }
+  .contact-link strong { font-size:0.95rem; color:var(--brown); }
+  .contact-form-wrap {
+    background:white; border-radius:20px; padding:2rem;
+    border:1px solid rgba(232,197,184,0.5);
+  }
+  .contact-form-wrap h3 { font-family:'Playfair Display',serif; color:var(--brown); font-size:1.3rem; margin-bottom:1.5rem; }
+  .form-group { margin-bottom:1rem; }
+  .form-group label {
+    display:block; font-size:0.78rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text-soft); margin-bottom:6px;
+  }
+  .form-group input, .form-group textarea, .form-group select {
+    width:100%; border:1px solid rgba(232,197,184,0.8); border-radius:10px;
+    padding:10px 14px; font-family:'Lato',sans-serif; font-size:0.9rem;
+    background:var(--cream); color:var(--text); outline:none; transition:border .2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--sage-dark); }
+  .form-group textarea { height:100px; resize:vertical; }
+  .form-submit {
+    width:100%; background:var(--brown); color:white; border:none;
+    border-radius:25px; padding:12px; font-family:'Lato',sans-serif;
+    font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase;
+    cursor:pointer; font-weight:700; transition:background .2s;
+  }
+  .form-submit:hover { background:var(--text); }
+
+  /* FOOTER */
+  footer {
+    background:var(--brown); color:rgba(255,255,255,0.85);
+    padding:3rem 2rem; text-align:center;
+  }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--rose); margin-bottom:0.5rem; }
+  .footer-logo em { font-style:italic; }
+  .footer-tagline { font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6; margin-bottom:1.8rem; }
+  .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+  .footer-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; }
+  .footer-links a:hover { color:var(--rose); }
+  .footer-social { display:flex; justify-content:center; gap:1rem; margin-bottom:1.8rem; }
+  .footer-social a {
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,0.3);
+    display:flex; align-items:center; justify-content:center; font-size:1rem;
+    text-decoration:none; color:white; transition:background .2s;
+  }
+  .footer-social a:hover { background:rgba(255,255,255,0.15); }
+  .footer-copy { font-size:0.75rem; opacity:0.45; }
+
+  /* WA FLOAT BUTTON */
+  .wa-float {
+    position:fixed; bottom:28px; right:28px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; color:white;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 24px rgba(0,0,0,0.25);
+    text-decoration:none; font-size:1.6rem;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .wa-float:hover { transform:scale(1.08); box-shadow:0 10px 32px rgba(0,0,0,0.3); }
+  .wa-tooltip {
+    position:absolute; right:68px; background:white; color:var(--text);
+    border-radius:10px; padding:6px 12px; font-size:0.78rem; white-space:nowrap;
+    box-shadow:0 4px 16px rgba(0,0,0,0.12); pointer-events:none;
+    opacity:0; transition:opacity .2s;
+  }
+  .wa-float:hover .wa-tooltip { opacity:1; }
+
+  /* ===================== RESPONSIVE ===================== */
+  /* Tablet (max 1024px) */
+  @media(max-width:1024px) {
+    .about-inner { gap:2.5rem; }
+    .contact-inner { gap:2rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Mobile & Tablet portrait (max 768px) */
+  @media(max-width:768px) {
+    /* NAV */
+    nav { padding:0 1rem; }
+    .nav-links {
+      display:none; position:fixed; top:70px; left:0; right:0;
+      background:var(--cream); flex-direction:column; padding:1.5rem;
+      border-bottom:1px solid var(--rose); gap:1rem; z-index:99;
+    }
+    .nav-links.open { display:flex; }
+    .hamburger { display:flex; }
+
+    /* HERO */
+    #hero { padding:90px 1.2rem 3rem; }
+    .hero-title { font-size:clamp(2rem,8vw,3rem); }
+
+    /* GALLERY */
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-card:nth-child(2),
+    .gallery-card:nth-child(4) { aspect-ratio:3/4; }
+
+    /* SERVICES */
+    .services-grid { grid-template-columns: 1fr; max-width:480px; }
+
+    /* ABOUT — imagen arriba, texto abajo */
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap:3rem;
+    }
+    .about-img-wrap { max-width:360px; margin:0 auto; width:100%; }
+    .about-accent { bottom:-10px; right:10px; font-size:0.85rem; padding:0.8rem 1rem; }
+    .about-accent strong { font-size:1.4rem; }
+
+    /* CONTACT */
+    .contact-inner { grid-template-columns: 1fr; }
+
+    /* SECTIONS padding */
+    section { padding: 3.5rem 1.2rem; }
+  }
+
+  /* Small phones (max 480px) */
+  @media(max-width:480px) {
+    .hero-title { font-size:2rem; }
+    .section-title { font-size:1.7rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction:column; align-items:center; }
+    .btn-primary, .btn-outline { width:100%; max-width:280px; text-align:center; }
+    .nav-logo-text span:first-child { font-size:1rem; }
+    .footer-links { gap:1rem; }
+    .wa-float { bottom:16px; right:16px; width:50px; height:50px; font-size:1.3rem; }
+  }
+
+  /* LANG SWITCH */
+  [data-lang="en"] { display:none; }
+  body.lang-en [data-lang="es"] { display:none; }
+  body.lang-en [data-lang="en"] { display:block; }
+  body.lang-en span[data-lang="en"] { display:inline; }
+  body.lang-en span[data-lang="es"] { display:none; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="32" width="44" height="24" rx="5" fill="#8FAF8C"/>
+      <rect x="52" y="38" width="20" height="18" rx="4" fill="#6B4F3A"/>
+      <rect x="55" y="41" width="12" height="9" rx="2" fill="#C8E6FA"/>
+      <circle cx="20" cy="58" r="7" fill="#6B4F3A"/>
+      <circle cx="20" cy="58" r="3.5" fill="#FAF7F4"/>
+      <circle cx="58" cy="58" r="7" fill="#6B4F3A"/>
+      <circle cx="58" cy="58" r="3.5" fill="#FAF7F4"/>
+      <circle cx="20" cy="26" r="5" fill="#E8C5B8"/>
+      <circle cx="20" cy="16" r="4" fill="#C99282"/>
+      <circle cx="30" cy="22" r="5" fill="#E8C5B8"/>
+      <circle cx="40" cy="18" r="4" fill="#8FAF8C"/>
+      <circle cx="34" cy="14" r="3" fill="#C99282"/>
+      <line x1="20" y1="31" x2="20" y2="26" stroke="#5E8A5B" stroke-width="1.5"/>
+      <line x1="30" y1="31" x2="30" y2="22" stroke="#5E8A5B" stroke-width="1.5"/>
+      <line x1="40" y1="31" x2="40" y2="18" stroke="#5E8A5B" stroke-width="1.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>Mar Flower Truck</span>
+      <span>Fresh Flowers</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span></a>
+    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a>
+    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span></a>
+    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+    <button class="nav-lang" onclick="toggleLang()" id="langBtn">EN</button>
+    <a href="#shop" class="nav-cta"><span data-lang="es">Ordenar</span><span data-lang="en">Order Now</span></a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-petals" id="petals"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">
+      <span data-lang="es">✦ Flores frescas con amor</span>
+      <span data-lang="en">✦ Fresh flowers with love</span>
+    </p>
+    <h1 class="hero-title">
+      <span data-lang="es">Lleva la belleza<br>de las flores<br><em>a tu vida</em></span>
+      <span data-lang="en">Bring the beauty<br>of flowers<br><em>into your life</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang="es">Bouquets artesanales, arreglos personalizados y flores frescas directo de nuestro flower truck. Para cada momento especial.</span>
+      <span data-lang="en">Handcrafted bouquets, custom arrangements and fresh flowers straight from our flower truck. For every special moment.</span>
+    </p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn-primary">
+        <span data-lang="es">Ver tienda</span><span data-lang="en">Shop now</span>
+      </a>
+      <a href="#contact" class="btn-outline">
+        <span data-lang="es">Contáctanos</span><span data-lang="en">Contact us</span>
+      </a>
+    </div>
+    <div class="hero-flowers">
+      <svg viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="170" y1="175" x2="140" y2="120" stroke="#5E8A5B" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="165" y2="110" stroke="#5E8A5B" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="195" y2="115" stroke="#5E8A5B" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="120" y2="130" stroke="#8FAF8C" stroke-width="2" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="215" y2="128" stroke="#8FAF8C" stroke-width="2" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="100" y2="140" stroke="#5E8A5B" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="170" y1="175" x2="240" y2="138" stroke="#5E8A5B" stroke-width="1.5" stroke-linecap="round"/>
+        <ellipse cx="150" cy="145" rx="10" ry="5" fill="#8FAF8C" transform="rotate(-30 150 145)"/>
+        <ellipse cx="188" cy="142" rx="10" ry="5" fill="#8FAF8C" transform="rotate(30 188 142)"/>
+        <circle cx="120" cy="125" r="18" fill="#E8C5B8" opacity="0.9"/>
+        <circle cx="108" cy="116" r="11" fill="#E8C5B8"/>
+        <circle cx="132" cy="113" r="11" fill="#C99282"/>
+        <circle cx="120" cy="108" r="11" fill="#E8C5B8"/>
+        <circle cx="120" cy="125" r="7" fill="#C99282"/>
+        <circle cx="165" cy="100" r="20" fill="#C99282" opacity="0.9"/>
+        <circle cx="152" cy="90" r="12" fill="#C99282"/>
+        <circle cx="178" cy="89" r="12" fill="#E8C5B8"/>
+        <circle cx="165" cy="85" r="12" fill="#C99282"/>
+        <circle cx="152" cy="110" r="12" fill="#E8C5B8"/>
+        <circle cx="178" cy="110" r="12" fill="#C99282"/>
+        <circle cx="165" cy="100" r="9" fill="#FAF7F4"/>
+        <circle cx="210" cy="118" r="18" fill="#8FAF8C" opacity="0.85"/>
+        <circle cx="198" cy="109" r="11" fill="#8FAF8C"/>
+        <circle cx="222" cy="108" r="11" fill="#5E8A5B"/>
+        <circle cx="210" cy="103" r="11" fill="#8FAF8C"/>
+        <circle cx="210" cy="118" r="7" fill="#5E8A5B"/>
+        <circle cx="100" cy="135" r="10" fill="#E8C5B8"/>
+        <circle cx="100" cy="135" r="5" fill="#C99282"/>
+        <circle cx="240" cy="130" r="10" fill="#C99282"/>
+        <circle cx="240" cy="130" r="5" fill="#E8C5B8"/>
+        <circle cx="135" cy="95" r="4" fill="#8FAF8C"/>
+        <circle cx="195" cy="88" r="4" fill="#E8C5B8"/>
+        <circle cx="155" cy="78" r="3" fill="#C99282"/>
+        <circle cx="175" cy="75" r="3" fill="#8FAF8C"/>
+        <path d="M130 165 Q170 158 210 165 L200 178 Q170 183 140 178 Z" fill="#E8C5B8" opacity="0.8"/>
+        <path d="M138 168 Q170 162 202 168 L198 175 Q170 179 142 175 Z" fill="#C99282" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header" style="text-align:center;">
+    <p class="section-label">
+      <span data-lang="es">Nuestra galería</span><span data-lang="en">Our gallery</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="es">Cada arreglo es<br><em>una obra de arte</em></span>
+      <span data-lang="en">Every arrangement<br><em>is a work of art</em></span>
+    </h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <div class="gallery-placeholder">
+        <span>🌸</span>
+        <p data-lang="es">Bouquet romántico</p><p data-lang="en" style="display:none">Romantic bouquet</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag">Bouquet</span></div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-placeholder" style="background:linear-gradient(135deg,#8FAF8C 0%,#5E8A5B 100%)">
+        <span>🌿</span>
+        <p data-lang="es">Arreglo silvestre</p><p data-lang="en" style="display:none">Wild arrangement</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag" data-lang="es">Arreglo</span><span class="gallery-tag" data-lang="en" style="display:none">Arrangement</span></div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-placeholder" style="background:linear-gradient(135deg,#C99282 0%,#A47B5E 100%)">
+        <span>🌹</span>
+        <p data-lang="es">Rosas premium</p><p data-lang="en" style="display:none">Premium roses</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag">Rosas / Roses</span></div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-placeholder" style="background:linear-gradient(135deg,#FAF7F4 0%,#E8C5B8 100%)">
+        <span>🌷</span>
+        <p data-lang="es" style="color:#6B4F3A">Bodas y eventos</p><p data-lang="en" style="display:none;color:#6B4F3A">Weddings & events</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag" data-lang="es">Eventos</span><span class="gallery-tag" data-lang="en" style="display:none">Events</span></div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-placeholder" style="background:linear-gradient(135deg,#E8C5B8 0%,#8FAF8C 100%)">
+        <span>🌼</span>
+        <p data-lang="es">Mix primaveral</p><p data-lang="en" style="display:none">Spring mix</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag">Mix</span></div>
+    </div>
+    <div class="gallery-card">
+      <div class="gallery-placeholder" style="background:linear-gradient(135deg,#5E8A5B 0%,#8FAF8C 100%)">
+        <span>🌺</span>
+        <p data-lang="es">Floral especial</p><p data-lang="en" style="display:none">Special floral</p>
+      </div>
+      <div class="gallery-overlay"><span class="gallery-tag" data-lang="es">Especial</span><span class="gallery-tag" data-lang="en" style="display:none">Special</span></div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;color:var(--text-soft);font-size:0.85rem;">
+    <span data-lang="es">📸 Síguenos en Instagram: </span>
+    <span data-lang="en">📸 Follow us on Instagram: </span>
+    <a href="https://www.instagram.com/marflowertruck" target="_blank" style="color:var(--sage-dark);font-weight:700;">@marflowertruck</a>
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <p class="section-label">
+      <span data-lang="es">Lo que ofrecemos</span><span data-lang="en">What we offer</span>
+    </p>
+    <h2 class="section-title">
+      <span data-lang="es">Nuestros <em>servicios</em></span><span data-lang="en">Our <em>services</em></span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="es">Cada ocasión merece flores perfectas. Personalizamos cada arreglo con amor y dedicación.</span>
+      <span data-lang="en">Every occasion deserves perfect flowers. We personalize each arrangement with love and dedication.</span>
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">💐</div>
+      <h3 class="service-name"><span data-lang="es">Bouquets frescos</span><span data-lang="en">Fresh bouquets</span></h3>
+      <p class="service-desc">
+        <span data-lang="es">Bouquets artesanales hechos con las flores más frescas, perfectos para cualquier ocasión especial.</span>
+        <span data-lang="en">Handcrafted bouquets made with the freshest flowers, perfect for any special occasion.</span>
+      </p>
+      <div class="service-price">$35 <span data-lang="es">desde</span><span data-lang="en">starting</span></div>
+      <a href="#shop" class="service-btn"><span data-lang="es">Ver opciones</span><span data-lang="en">See options</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌹</div>
+      <h3 class="service-name"><span data-lang="es">Arreglos personalizados</span><span data-lang="en">Custom arrangements</span></h3>
+      <p class="service-desc">
+        <span data-lang="es">Diseñamos el arreglo de tus sueños según tus colores, flores favoritas y presupuesto.</span>
+        <span data-lang="en">We design the arrangement of your dreams based on your colors, favorite flowers and budget.</span>
+      </p>
+      <div class="service-price">$55 <span data-lang="es">desde</span><span data-lang="en">starting</span></div>
+      <a href="#contact" class="service-btn"><span data-lang="es">Solicitar</span><span data-lang="en">Request</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎊</div>
+      <h3 class="service-name"><span data-lang="es">Bodas y eventos</span><span data-lang="en">Weddings & events</span></h3>
+      <p class="service-desc">
+        <span data-lang="es">Decoración floral completa para tu boda, quinces, baby shower o cualquier celebración especial.</span>
+        <span data-lang="en">Complete floral decoration for your wedding, quinces, baby shower or any special celebration.</span>
+      </p>
+      <div class="service-price"><span data-lang="es">Consultar</span><span data-lang="en">Inquire</span></div>
+      <a href="#contact" class="service-btn"><span data-lang="es">Pedir cotización</span><span data-lang="en">Get a quote</span></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚚</div>
+      <h3 class="service-name"><span data-lang="es">Flower truck pop-up</span><span data-lang="en">Flower truck pop-up</span></h3>
+      <p class="service-desc">
+        <span data-lang="es">¡Lleva nuestro flower truck a tu evento! Tus invitados escogen y crean su propio bouquet.</span>
+        <span data-lang="en">Bring our flower truck to your event! Your guests pick and create their own bouquet.</span>
+      </p>
+      <div class="service-price"><span data-lang="es">Consultar</span><span data-lang="en">Inquire</span></div>
+      <a href="#contact" class="service-btn"><span data-lang="es">Más info</span><span data-lang="en">More info</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" style="background:#EDF4EC;">
+  <div class="section-header" style="text-align:center;">
+    <p class="section-label"><span data-lang="es">Tienda online</span><span data-lang="en">Online shop</span></p>
+    <h2 class="section-title">
+      <span data-lang="es">Ordena tus flores <em>aquí</em></span><span data-lang="en">Order your flowers <em>here</em></span>
+    </h2>
+    <p class="section-sub" style="margin:0 auto 2rem;">
+      <span data-lang="es">Pago 100% seguro. Tu tarjeta es procesada por Stripe/PayPal — nosotros nunca vemos tus datos.</span>
+      <span data-lang="en">100% secure payment. Your card is processed by Stripe/PayPal — we never see your data.</span>
+    </p>
+  </div>
+  <div class="shop-features">
+    <div class="shop-feature">
+      <div class="shop-feature-icon">💐</div>
+      <div class="shop-feature-name"><span data-lang="es">Bouquets frescos</span><span data-lang="en">Fresh bouquets</span></div>
+      <p class="shop-feature-desc"><span data-lang="es">Desde $35 · Hechos a mano el mismo día</span><span data-lang="en">From $35 · Handmade same day</span></p>
+    </div>
+    <div class="shop-feature">
+      <div class="shop-feature-icon">🌹</div>
+      <div class="shop-feature-name"><span data-lang="es">Arreglos especiales</span><span data-lang="en">Special arrangements</span></div>
+      <p class="shop-feature-desc"><span data-lang="es">Desde $55 · Personalizados para ti</span><span data-lang="en">From $55 · Personalized for you</span></p>
+    </div>
+    <div class="shop-feature">
+      <div class="shop-feature-icon">🎊</div>
+      <div class="shop-feature-name"><span data-lang="es">Bodas y eventos</span><span data-lang="en">Weddings & events</span></div>
+      <p class="shop-feature-desc"><span data-lang="es">Cotización personalizada · Sin límite</span><span data-lang="en">Custom quote · No limits</span></p>
+    </div>
+    <div class="shop-feature">
+      <div class="shop-feature-icon">🚚</div>
+      <div class="shop-feature-name"><span data-lang="es">Entrega a domicilio</span><span data-lang="en">Home delivery</span></div>
+      <p class="shop-feature-desc"><span data-lang="es">Área local · Coordinar por WhatsApp</span><span data-lang="en">Local area · Coordinate via WhatsApp</span></p>
+    </div>
+  </div>
+
+  <div class="shop-cta-wrap">
+    <div class="shop-cta-flowers">🌸🌿🌸</div>
+    <h3 class="shop-cta-title">
+      <span data-lang="es">Flores frescas,<br><em>listas para ti</em></span>
+      <span data-lang="en">Fresh flowers,<br><em>ready for you</em></span>
+    </h3>
+    <p class="shop-cta-sub">
+      <span data-lang="es">Explora todos nuestros arreglos, elige el que más te guste y paga de forma segura. Actualizamos la tienda constantemente con flores nuevas.</span>
+      <span data-lang="en">Browse all our arrangements, pick your favorite and pay securely. We constantly update the shop with new flowers.</span>
+    </p>
+    <a href="https://mar-flower-truck.square.site" target="_blank" class="shop-cta-btn">
+      <span data-lang="es">🛒 Ver tienda completa</span>
+      <span data-lang="en">🛒 Browse full shop</span>
+    </a>
+    <div class="shop-trust">
+      <span>🔒 <span data-lang="es">Pago seguro</span><span data-lang="en">Secure payment</span></span>
+      <span>💳 <span data-lang="es">Tarjeta o efectivo</span><span data-lang="en">Card or cash</span></span>
+      <span>✅ <span data-lang="es">Sin mensualidad</span><span data-lang="en">No monthly fee</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <div class="about-img-box">
+        <!-- Tu foto va aquí. Asegúrate de tener la carpeta "imagenes" junto al index.html -->
+        <img src="imagenes/mar.jpeg" alt="Mar - Fundadora de Mar Flower Truck">
+      </div>
+      <div class="about-accent">
+        <strong>❤️</strong>
+        <span data-lang="es">Hecho con amor</span>
+        <span data-lang="en">Made with love</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label"><span data-lang="es">Sobre nosotros</span><span data-lang="en">About us</span></p>
+      <h2 class="section-title">
+        <span data-lang="es">Detrás de cada<br>flor hay una <em>historia</em></span>
+        <span data-lang="en">Behind every<br>flower is a <em>story</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="es">Soy Mar, y mi amor por las flores nació de querer llevar alegría a cada momento. Con mi flower truck, llevo arreglos frescos y personalizados directamente a ti — porque cada persona merece sentirse especial.</span>
+        <span data-lang="en">I'm Mar, and my love for flowers was born from wanting to bring joy to every moment. With my flower truck, I bring fresh, personalized arrangements directly to you — because everyone deserves to feel special.</span>
+      </p>
+      <div class="about-values">
+        <div class="about-val">
+          <div class="about-val-dot"></div>
+          <p><strong><span data-lang="es">Flores frescas diarias</span><span data-lang="en">Daily fresh flowers</span></strong> — <span data-lang="es">seleccionadas con cuidado cada mañana.</span><span data-lang="en">carefully selected every morning.</span></p>
+        </div>
+        <div class="about-val">
+          <div class="about-val-dot"></div>
+          <p><strong><span data-lang="es">100% personalizado</span><span data-lang="en">100% personalized</span></strong> — <span data-lang="es">cada arreglo es único como tú.</span><span data-lang="en">every arrangement is as unique as you.</span></p>
+        </div>
+        <div class="about-val">
+          <div class="about-val-dot"></div>
+          <p><strong><span data-lang="es">Comunidad primero</span><span data-lang="en">Community first</span></strong> — <span data-lang="es">orgullosamente local y familiar.</span><span data-lang="en">proudly local and family-owned.</span></p>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="#contact" class="btn-primary">
+          <span data-lang="es">Hablar con Mar</span><span data-lang="en">Talk to Mar</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="section-header" style="text-align:center;">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">
+        <span data-lang="es">Preguntas <em>frecuentes</em></span><span data-lang="en">Frequently asked <em>questions</em></span>
+      </h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3 data-lang="es">¿Con cuánta anticipación debo ordenar?</h3>
+        <h3 data-lang="en">How far in advance should I order?</h3>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <p data-lang="es">Para pedidos regulares, con 24-48 horas es suficiente. Para bodas y eventos grandes, recomendamos contactarnos con al menos 2-4 semanas de anticipación.</p>
+        <p data-lang="en">For regular orders, 24-48 hours is enough. For weddings and large events, we recommend contacting us at least 2-4 weeks in advance.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3 data-lang="es">¿Hacen entregas a domicilio?</h3>
+        <h3 data-lang="en">Do you offer home delivery?</h3>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <p data-lang="es">¡Sí! Ofrecemos entrega a domicilio en el área local. Contáctanos para confirmar tu zona y el costo de envío.</p>
+        <p data-lang="en">Yes! We offer home delivery in the local area. Contact us to confirm your zone and shipping cost.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3 data-lang="es">¿Puedo personalizar los colores y flores?</h3>
+        <h3 data-lang="en">Can I customize the colors and flowers?</h3>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <p data-lang="es">¡Por supuesto! Cada arreglo puede personalizarse. Escríbenos por WhatsApp con tus preferencias y te hacemos una propuesta.</p>
+        <p data-lang="en">Absolutely! Every arrangement can be customized. Message us on WhatsApp with your preferences and we'll make a proposal.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3 data-lang="es">¿Aceptan pedidos de último minuto?</h3>
+        <h3 data-lang="en">Do you accept last-minute orders?</h3>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <p data-lang="es">Lo intentamos siempre. Contáctanos por WhatsApp lo antes posible y haremos todo lo posible por ayudarte.</p>
+        <p data-lang="en">We always try. Contact us on WhatsApp as soon as possible and we'll do our best to help you.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h3 data-lang="es">¿Es seguro pagar en la tienda online?</h3>
+        <h3 data-lang="en">Is it safe to pay in the online store?</h3>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">
+        <p data-lang="es">100% seguro. Los pagos son procesados por Stripe o PayPal — las plataformas más confiables del mundo. Nosotros nunca vemos tu información de tarjeta.</p>
+        <p data-lang="en">100% safe. Payments are processed by Stripe or PayPal — the most trusted platforms in the world. We never see your card information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header" style="text-align:center;">
+    <p class="section-label"><span data-lang="es">Contáctanos</span><span data-lang="en">Contact us</span></p>
+    <h2 class="section-title">
+      <span data-lang="es">¿Lista para ordenar<br>o tienes <em>preguntas</em>?</span>
+      <span data-lang="en">Ready to order<br>or have <em>questions</em>?</span>
+    </h2>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="section-sub" style="margin-bottom:2rem;">
+        <span data-lang="es">Estamos aquí para ayudarte. Escríbenos por WhatsApp o Instagram, o llena el formulario.</span>
+        <span data-lang="en">We're here to help. Message us on WhatsApp or Instagram, or fill out the form.</span>
+      </p>
+      <div class="contact-links">
+        <a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="contact-link">
+          <div class="contact-link-icon wa">📱</div>
+          <div>
+            <p>WhatsApp</p>
+            <strong data-lang="es">Escríbenos directo</strong>
+            <strong data-lang="en">Message us directly</strong>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/marflowertruck" target="_blank" class="contact-link">
+          <div class="contact-link-icon ig">📷</div>
+          <div><p>Instagram</p><strong>@marflowertruck</strong></div>
+        </a>
+        <a href="mailto:info@marflowertruck.com" class="contact-link">
+          <div class="contact-link-icon em">✉️</div>
+          <div><p>Email</p><strong>info@marflowertruck.com</strong></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <h3><span data-lang="es">Envíanos un mensaje</span><span data-lang="en">Send us a message</span></h3>
+      <div class="form-group">
+        <label><span data-lang="es">Tu nombre</span><span data-lang="en">Your name</span></label>
+        <input type="text" placeholder="Mar García">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label><span data-lang="es">¿Qué necesitas?</span><span data-lang="en">What do you need?</span></label>
+        <select>
+          <option>Bouquet / Arreglo</option>
+          <option data-lang="es">Evento o boda</option>
+          <option data-lang="en" style="display:none">Event or wedding</option>
+          <option>Flower truck pop-up</option>
+          <option>Otro / Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label><span data-lang="es">Mensaje</span><span data-lang="en">Message</span></label>
+        <textarea placeholder="Cuéntanos sobre tu pedido, fecha, presupuesto..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">
+        <span data-lang="es">Enviar mensaje 🌸</span><span data-lang="en">Send message 🌸</span>
+      </button>
+      <p style="font-size:0.75rem;color:var(--text-soft);margin-top:0.8rem;text-align:center;">
+        <span data-lang="es">⚡ Respondemos en menos de 24 horas</span>
+        <span data-lang="en">⚡ We respond within 24 hours</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><em>Mar</em> Flower Truck</div>
+  <p class="footer-tagline">
+    <span data-lang="es">Flores frescas con amor 🌸</span><span data-lang="en">Fresh flowers with love 🌸</span>
+  </p>
+  <div class="footer-links">
+    <a href="#gallery"><span data-lang="es">Galería</span><span data-lang="en">Gallery</span></a>
+    <a href="#services"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a>
+    <a href="#shop"><span data-lang="es">Tienda</span><span data-lang="en">Shop</span></a>
+    <a href="#about"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/marflowertruck" target="_blank" aria-label="Instagram">📷</a>
+    <a href="https://wa.me/TU_NUMERO" target="_blank" aria-label="WhatsApp">📱</a>
+  </div>
+  <p class="footer-copy">© 2025 Mar Flower Truck. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/TU_NUMERO?text=Hola!%20Me%20interesa%20ordenar%20flores%20🌸" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <span class="wa-tooltip"><span data-lang="es">¡Escríbenos!</span><span data-lang="en">Chat with us!</span></span>
+  📱
+</a>
+
+<script>
+(function(){
+  const container = document.getElementById('petals');
+  const colors = ['#E8C5B8','#C99282','#8FAF8C','#FAF7F4','#5E8A5B'];
+  for(let i=0;i<18;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    const size=8+Math.random()*18;
+    p.style.cssText=`width:${size}px;height:${size*1.4}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;top:-30px;animation-duration:${8+Math.random()*14}s;animation-delay:${Math.random()*10}s;border-radius:${Math.random()>0.5?'50% 0':'0 50%'} ${Math.random()>0.5?'50% 0':'0 50%'};`;
+    container.appendChild(p);
+  }
+})();
+
+var currentLang = 'es';
+function toggleLang(){
+  currentLang = currentLang==='es'?'en':'es';
+  document.body.classList.toggle('lang-en', currentLang==='en');
+  document.getElementById('langBtn').textContent = currentLang==='es'?'EN':'ES';
+  document.querySelectorAll('[data-lang]').forEach(function(el){
+    if(el.tagName==='SPAN'||el.tagName==='STRONG'){
+      el.style.display = el.dataset.lang===currentLang?'inline':'none';
+    } else if(['P','H3','H1','H2','OPTION'].includes(el.tagName)){
+      el.style.display = el.dataset.lang===currentLang?'':'none';
+    }
+  });
+}
+
+function toggleFaq(el){
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen) item.classList.add('open');
+}
+
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function submitForm(){
+  alert(currentLang==='es'
+    ? '¡Gracias! Te contactaremos pronto. 🌸'
+    : 'Thank you! We will contact you soon. 🌸'
+  );
+}
+
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){ document.getElementById('navLinks').classList.remove('open'); });
+});
+
+document.querySelectorAll('[data-lang="en"]').forEach(function(el){
+  if(el.tagName==='SPAN'||el.tagName==='STRONG') el.style.display='none';
+  else if(el.tagName!=='BUTTON') el.style.display='none';
+});
+</script>
+</body>
+</html>
